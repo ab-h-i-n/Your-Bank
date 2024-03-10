@@ -3,10 +3,14 @@ import ServiceBtn from "./ServiceBtn";
 import SectionHnD from "./SectionHnD";
 import DepositModal from "./DepositModal";
 import WithdrawModal from "./WithdrawModal";
+import CheckBalanceModal from "./CheckBalanceModal";
+import ViewDetailsModal from "./ViewDetailsModal";
 
 const OurServicesSection = () => {
   const [DepModalOpen, setDepModalOpen] = useState(false);
   const [WithModalOpen, setWithModalOpen] = useState(false);
+  const [CheckBalModalOpen, setCheckBalModalOpen] = useState(false);
+  const [viewAccModalOpen, setViewAccModalOpen] = useState(false);
 
   return (
     <section id="our-service" class="grid gap-y-[60px]">
@@ -26,7 +30,7 @@ const OurServicesSection = () => {
         {/* <!-- option 1  --> */}
 
         <DepositModal openModal={DepModalOpen} setOpenModal={setDepModalOpen}>
-          <button onClick={() => setDepModalOpen(true)}>
+          <button onClick={() => setDepModalOpen(true)} className="w-full">
             <ServiceBtn img={"assets/checking_accounts.svg"} text={"Deposit"} />
           </button>
         </DepositModal>
@@ -34,16 +38,25 @@ const OurServicesSection = () => {
         {/* <!-- option 2  --> */}
 
         <WithdrawModal openModal={WithModalOpen} setOpenModal={setWithModalOpen}>
-          <button onClick={()=>setWithModalOpen(true)} ><ServiceBtn img={"assets/saving_accounts.svg"} text={"Withdraw"} /></button>
+          <button onClick={() => setWithModalOpen(true)} className="w-full" >
+            <ServiceBtn img={"assets/saving_accounts.svg"} text={"Withdraw"} /></button>
         </WithdrawModal>
 
         {/* <!-- option 3  --> */}
 
-        <ServiceBtn img={"assets/loans_mortgages.svg"} text={"Account Details"}/>
+        <ViewDetailsModal openModal={viewAccModalOpen} setOpenModal={setViewAccModalOpen}>
+          <button onClick={() => setViewAccModalOpen(true)} className="w-full">
+            <ServiceBtn img={"assets/loans_mortgages.svg"} text={"Account Details"} /></button>
+        </ViewDetailsModal>
+
 
         {/* <!-- option 4  --> */}
 
-        <ServiceBtn img={"assets/loans_mortgages.svg"} text={"Check Balance"} />
+        <CheckBalanceModal openModal={CheckBalModalOpen} setOpenModal={setCheckBalModalOpen} >
+          <button onClick={() => setCheckBalModalOpen(true)} className="w-full">
+            <ServiceBtn img={"assets/loans_mortgages.svg"} text={"Check Balance"} /></button>
+        </CheckBalanceModal>
+
       </div>
     </section>
   );

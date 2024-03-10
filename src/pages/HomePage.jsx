@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import HeroSection from '../components/HeroSection'
 import OurServicesSection from '../components/OurServicesSection'
 import UseCaseSection from '../components/UseCaseSection'
+import { UserContext } from '../User.js'
 
 
 const HomePage = () => {
+
+  const user = useContext(UserContext);
+
+  console.log(user);
+
   return (
     <div className='bg-[#191919] min-h-screen'>
 

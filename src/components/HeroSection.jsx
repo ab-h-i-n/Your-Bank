@@ -1,9 +1,9 @@
 import React from 'react'
 
 const HeroSection = () => {
-  return (
+    return (
 
-    <section id="hero-section" class="grid grid-cols-1 h-full py-[50px] overflow-x-clip lg:grid-cols-2 lg:py-[30px] lg:gap-x-[100px]">
+        <section id="hero-section" class="grid grid-cols-1 h-full py-[50px] overflow-x-clip lg:grid-cols-2 lg:py-[30px] lg:gap-x-[100px]">
 
             {/* <!-- contaner-1  --> */}
 
@@ -75,7 +75,7 @@ const HeroSection = () => {
             </div>
 
         </section>
-  )
+    )
 }
 
 export default HeroSection
